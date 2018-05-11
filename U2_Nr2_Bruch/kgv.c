@@ -17,11 +17,15 @@ extern void ausgabe(Rational r);
 extern Rational erweitern(Rational r, int faktor);
 
 int main(){
-    Rational a = {10, 8};
-    Rational b = {7, 2};
-    float r = toFloat(a);
-    printf("%f\n", r);
-    return 0;
+    int z1;
+    int n1;
+    int z2;
+    int n2;
+    scanf("%i%i%i%i",&z1, &n1, &z2, &n2);
+    Rational r1 = {z1, n1};
+    Rational r2 = {z2, n2};
+    Rational r = addiere(r1, r2);
+    ausgabe(r);
 }
 
 Rational kuerze(Rational r){

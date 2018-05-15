@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <time.h>
 
-typedef struct Messung{
+struct Messung{
     short int spannung;
     float stromstaerke;
     unsigned short int druck;
     struct tm zeit;
-} Messung;
+} typedef Messung;
 extern void ausgabe(Messung m);
 
 int main(){
@@ -21,10 +21,10 @@ int main(){
 }
 
 void ausgabe(Messung m){
-    printf("----- Messung vom %d.%d.%d %d:%d Uhr -----\n",
-        m.zeit.tm_mday, m.zeit.tm_mon, m.zeit.tm_year + 1900, m.zeit.tm_hour, m.zeit.tm_min);
+    printf("-----Messsung von %d.%d.%d %d:%d Uhr-----\n",
+        m.zeit.tm_mday, m.zeit.tm_mon, m.zeit.tm_year, m.zeit.tm_hour, m.zeit.tm_min);
     printf("Spannung: %d Volt\n", m.spannung);
     printf("Stromstaerke: %f Ampere\n", m.stromstaerke);
     printf("Druck: %d Bar\n", m.druck);
-    printf("---------- Ende der Messung ----------\n");
+    printf("----------Ende der Messung----------\n");
 }

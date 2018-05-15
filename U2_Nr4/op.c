@@ -29,12 +29,19 @@ double fkt1(float x){
     return (5*x + 3) / (7*(x-1.5));
 }
 double linksShift2(float x){
+<<<<<<< HEAD
     int b = x;
     return b << 2;
 }
 double undMit0x00F0(float x){
     int b = x;
     return b & 0x00F0;
+=======
+    return (x << 2); //wie bekomme ich da eine Hexzahl raus?
+}
+double undMit0x00F0(float x){
+    return x & 0x00F0;
+>>>>>>> 28c87a34c00d7945ba669eb2d7cce324a2467118
 }
 int inkrement(float x){
     return x++;

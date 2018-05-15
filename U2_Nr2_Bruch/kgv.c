@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 typedef struct Bruch{
     int zaehler;
     int nenner;
@@ -65,19 +64,7 @@ void ausgabe(Rational r){
 }
 
 int kgv(int z1, int z2){
-    int mult1 = 1;
-    int mult2 = 1;
-    while(1 == 1){
-        int tmp1 = z1 * mult1;
-        int tmp2 = z2 * mult2;
-        if(tmp1 == tmp2){
-            return tmp1;
-        } else if(tmp1 < tmp2){
-            mult1++;
-        } else{
-            mult2++;
-        }
-    }
+    return (z1 * z2) / ggt(z1, z2);
 }
 int ggt(int z1, int z2){
     while(z2 != 0){

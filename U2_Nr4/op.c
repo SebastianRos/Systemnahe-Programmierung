@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 extern float quadrat(float x);
 extern int modulo3(float x);
@@ -28,9 +29,11 @@ double fkt1(float x){
     return (5*x + 3) / (7*(x-1.5));
 }
 double linksShift2(float x){
+    int b = x;
     return b << 2;
 }
 double undMit0x00F0(float x){
+    int b = x;
     return b & 0x00F0;
 }
 int inkrement(float x){

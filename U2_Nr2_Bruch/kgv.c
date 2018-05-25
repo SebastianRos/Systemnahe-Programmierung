@@ -15,18 +15,6 @@ extern float toFloat(Rational r);
 extern void ausgabe(Rational r);
 extern Rational erweitern(Rational r, int faktor);
 
-int main(){
-    int z1;
-    int n1;
-    int z2;
-    int n2;
-    scanf("%i%i%i%i",&z1, &n1, &z2, &n2);
-    Rational r1 = {z1, n1};
-    Rational r2 = {z2, n2};
-    Rational r = addiere(r1, r2);
-    ausgabe(r);
-}
-
 Rational kuerze(Rational r){
     int teiler = ggt(r.nenner, r.zaehler);
     Rational result = {r.zaehler / teiler, r.nenner / teiler};

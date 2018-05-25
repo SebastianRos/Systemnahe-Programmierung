@@ -1,8 +1,14 @@
 @echo off
+
+setlocal EnableDelayedExpansion
+
 for %%i in (*.c) do (
-	cd C:\MinGW\bin
-	gcc "%~d0%~p0%%i" -o "%~d0%~p0%%~ni.exe"
-	cd %~d0%~p0
-	%%~ni.exe
+	echo %~dp0%%i
+	SET files=!files! "%~dp0%%i" 
 )
+echo %files%
+::cd C:\MinGW\bin
+::gcc -o "%~dp0Anwendung"
+::cd %~d0%~p0
+::%~dp0Anwendung.exe
 pause

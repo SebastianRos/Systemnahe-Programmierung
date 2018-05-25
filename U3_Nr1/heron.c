@@ -1,20 +1,22 @@
 #include <stdio.h>
+#include <math.h>
 
 extern double hsqrt(double a);
-extern double hsqrt(double a, int tiefe);
+extern double rhsqrt(double a, int tiefe);
 
 int main(){
-    double r = hsqrt(4);;
-    printf("%d", )
+    int a = 2;
+    printf("%f | ", hsqrt(a));
+    printf("%f", sqrt(a));
 }
 
 double hsqrt(double a){
-    return hsqrt(a, 3);
+    return rhsqrt(a, 3);
 }
-double hsqrt(double a, int tiefe){
+double rhsqrt(double a, int tiefe){
     if (tiefe <= 0){
         return a;
     }
-    double tmp = hsqrt(a, tiefe-1);
+    double tmp = rhsqrt(a, tiefe-1);
     return 0.5 * (tmp + (a/tmp));
 }

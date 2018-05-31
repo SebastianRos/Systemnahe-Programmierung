@@ -1,8 +1,17 @@
 @echo off
-for %%i in (*.c) do (
-	cd C:\MinGW\bin
-	gcc "%~d0%~p0%%i" -o "%~d0%~p0%%~ni.exe"
-	cd %~d0%~p0
-	::%%~ni.exe
-)
+color 02
+title SUPERMEGAKRASSESHITHIERAMLAUFENDIGGAJOYOLOSWAG
+IF EXIST C:\MinGW\bin SET PATH=%PATH%;C:\MinGW\bin
+
+set files=
+
+for /r %%i in (*.c) DO call :concat "%%i"
+echo %files%
+gcc %files% -o %dp0%anwendung
+%dp0%anwendung
 pause
+goto :eof
+
+:concat
+set files=%files% %1% 
+goto :eof

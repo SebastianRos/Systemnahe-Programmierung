@@ -6,8 +6,9 @@ IF EXIST C:\MinGW\bin SET PATH=%PATH%;C:\MinGW\bin
 set files=
 
 for /r %%i in (*.c) DO call :concat "%%i"
-echo %files%
+echo Gefundene dateien: %files%
 gcc %files% -o %dp0%anwendung
+echo Kompilieren abgeschlossen
 %dp0%anwendung
 pause
 goto :eof
